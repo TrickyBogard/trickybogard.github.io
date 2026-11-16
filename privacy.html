@@ -1,32 +1,441 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - TrickyBogard Apps</title>
+  <title>Gizlilik Politikası / Privacy Policy — Quick Message</title>
   <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; color: #333; }
-    h1 { color: #2C3E50; }
-    h2 { color: #34495E; margin-top: 30px; font-size: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #02173a;
+      --primary-light: #1e3a8a;
+      --accent: #2563eb;
+      --border-color: #e2e8f0;
+      --badge-bg: #eff6ff;
+      --badge-text: #1d4ed8;
+      --notice-bg: #f8fafc;
+      --notice-border: #3b82f6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --primary: #38bdf8;
+        --primary-light: #7dd3fc;
+        --accent: #60a5fa;
+        --border-color: #334155;
+        --badge-bg: #1e3a8a;
+        --badge-text: #93c5fd;
+        --notice-bg: #1e293b;
+        --notice-border: #60a5fa;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.65;
+      padding: 32px 16px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px 32px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .lang-switcher {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .lang-btn {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border: 1px solid var(--border-color);
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    .meta-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-top: 36px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    p, ul, ol {
+      margin-bottom: 14px;
+      color: var(--text-main);
+      font-size: 0.96rem;
+    }
+    ul, ol {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    strong {
+      color: var(--text-main);
+    }
+    .table-responsive {
+      overflow-x: auto;
+      margin: 18px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background-color: var(--badge-bg);
+      color: var(--badge-text);
+      font-weight: 600;
+    }
+    .notice-box {
+      background: var(--notice-bg);
+      border-left: 4px solid var(--notice-border);
+      padding: 14px 18px;
+      border-radius: 6px;
+      margin: 18px 0;
+      font-size: 0.92rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    .lang-section {
+      display: none;
+    }
+    .lang-section.visible {
+      display: block;
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy for TrickyBogard Apps</h1>
-  <p>This privacy policy applies to all mobile applications ("Apps") developed and published by <strong>Kenan Ergin (TrickyBogard)</strong> for mobile devices.</p>
+  <div class="container">
+    <div class="header">
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('tr')">Türkçe</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+      </div>
+      <span class="meta-badge" id="meta-badge">Veri Kullanımı ve Gizlilik Bilgilendirmesi</span>
+      <h1 id="page-title">Quick Message — Gizlilik Politikası</h1>
+      <p id="sub-meta" style="color: var(--text-muted); font-size: 0.88rem;">Son Güncelleme: 16 Kasım 2026 | Uygulama Kimliği: <code>com.trickybogard.quickwa</code></p>
+    </div>
 
-  <h2>1. Data Collection and Usage</h2>
-  <p>We respect your privacy. Our core philosophy is to process data locally on your device whenever possible. We do NOT secretly collect, store, or sell your personal data, contact lists, or private messages to third parties.</p>
+    <!-- TÜRKÇE BÖLÜM -->
+    <div id="section-tr" class="lang-section visible">
+      <p>Bu Gizlilik Politikası, <strong>Kenan Ergin (TrickyBogard)</strong> ("Geliştirici", "biz") tarafından geliştirilen ve Google Play Store üzerinden dağıtılan <strong>Quick Message</strong> (Paket Kimliği: <code>com.trickybogard.quickwa</code>) mobil uygulaması için geçerlidir.</p>
+      
+      <p>Quick Message, kullanıcı verilerinin gizliliğini temel alan yerel öncelikli bir mimariyle geliştirilmiştir. Geliştiricinin sahip olduğu veya işlettiği harici bir kullanıcı veritabanı, üyelik sunucusu veya merkezi kimlik doğrulama altyapısı <strong>bulunmamaktadır</strong>.</p>
 
-  <h2>2. Device Features and Permissions</h2>
-  <p>Depending on the specific App you use, we may request access to certain device features (such as Camera, Location, or Storage) strictly to provide the app's core functionality (e.g., generating a location link or saving a file). This data is processed locally and is not stored on our personal servers.</p>
+      <h2>1. Toplanan ve İşlenen Veriler</h2>
+      <p>Uygulamanın veri işleme süreçleri üç ana başlık altında sınıflandırılır:</p>
 
-  <h2>3. Third-Party Services & Advertising</h2>
-  <p>Some of our Apps may utilize official third-party APIs (like WhatsApp, Telegram, etc.) to perform tasks. We are not responsible for the privacy practices of these external platforms. Additionally, our Free/Freemium apps may use third-party advertising services, such as <strong>Google AdMob</strong>, which may collect anonymous device identifiers and advertising data to serve relevant ads.</p>
+      <h3>A. Yalnızca Cihazınızda Saklanan Yerel Veriler (Sunucuya İletilmez)</h3>
+      <ul>
+        <li><strong>Mesaj Taslakları ve Hızlı Yanıtlar:</strong> Yazdığınız mesajlar ve hazırladığınız hızlı cevap metinleri yalnızca telefonunuzun yerel depolama alanında tutulur.</li>
+        <li><strong>Dinamik Şablonlar:</strong> Müşteri adı, sipariş numarası gibi değişkenler içeren şablonlar yalnızca yerel cihazınızda saklanır.</li>
+        <li><strong>Kayıtlı Konumlar ve Harita Bağlantıları:</strong> Manuel olarak kaydettiğiniz adresler ve Google Maps linkleri cihazınızda metin olarak saklanır. Uygulama canlı GPS veya arka plan konum izleme özellikleri barındırmaz.</li>
+        <li><strong>Şifreli Kasa (Secure Vault) Kayıtları:</strong> Özel notlarınız ve hassas kayıtlarınız, Android Keystore tabanlı anahtarlarla <strong>AES-256-GCM</strong> şifreleme kullanılarak (<code>flutter_secure_storage</code> aracılığıyla) yerel olarak şifrelenir. Biyometrik kimlik doğrulama (parmak izi) Android işletim sisteminin resmî <code>BiometricPrompt</code> API'si üzerinden donanım destekli güvenlik bileşenleriyle işletilir. 4 haneli PIN kodu ise Keystore ile şifrelenen yerel depolama içinde tutulur ve doğrulama işlemi cihaz içinde yerel olarak gerçekleştirilir; anahtarlar veya şifreler hiçbir harici sunucuya veya geliştiriciye iletilmez.</li>
+      </ul>
 
-  <h2>4. Changes to This Policy</h2>
-  <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+      <h3>B. Cihaz İçi Geçici İşlenen Veriler (Kamera ve OCR)</h3>
+      <ul>
+        <li><strong>Kamera Erişimi:</strong> Kamera izni yalnızca siz 'Kamera / OCR' butonuna dokunduğunuzda basılı evrak, kartvizit veya tabelalardaki telefon numaralarını taramak veya QR kod okumak amacıyla istenir.</li>
+        <li><strong>On-Device ML Kit:</strong> Metin tanıma ve QR/barkod okuma işlemleri Google ML Kit bileşenleriyle cihaz üzerinde gerçekleştirilir. Fotoğraflarınız veya kamera görüntüleriniz internet üzerinden hiçbir harici sunucuya veya Google bulutuna aktarılmaz. Google ML Kit, SDK çalışması ve teşhis amaçlarıyla cihaz/uygulama bilgileri ve kurulum düzeyinde tanımlayıcılar işleyebilir. Tarama tamamlandığında metin tanıyıcısı kapatılır. Kamera veya galeri seçimi sırasında oluşan geçici önbellek (cache) dosyaları uygulamanın geçici yerel dizininde tutulur ve Android işletim sisteminin önbellek temizleme döngüsüne veya kullanıcının sistem ayarlarından önbelleği temizlemesine tabidir.</li>
+      </ul>
 
-  <h2>Contact Us</h2>
-  <p>If you have any questions or suggestions regarding our privacy practices for any of our Apps, please contact us at: <a href="mailto:knnergn@gmail.com">knnergn@gmail.com</a></p>
+      <h3>C. Üçüncü Taraf SDK'lar Tarafından İşlenen Veriler</h3>
+      <p>Uygulama, temel teknik işlevleri sağlamak adına Google Mobile Ads, UMP, RevenueCat ve Google ML Kit SDK'larını kullanmaktadır. Bu SDK'lar aşağıdaki verileri işleyebilir:</p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Veri Türü</th>
+              <th>Hizmet Sağlayıcı</th>
+              <th>Amaç</th>
+              <th>Toplama / Paylaşım Zamanlaması</th>
+              <th>Aktarım Güvenliği</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Reklam Kimliği (AAID / AD_ID), Yaklaşık Konum (IP tabanlı), Uygulama Açılışı/Oturum Etkileşimleri, Teşhis ve Çökme Günlükleri</strong></td>
+              <td>Google AdMob &amp; UMP (Google LLC)</td>
+              <td>Rıza yönetimi (UMP), uygulama açılışı/oturum analitiği, sahtekarlık önleme ve teknik teşhis. Mevcut sürümde uygulama içi reklam gösterimi kapalıdır.</td>
+              <td>Ücretsiz sürümde UMP rıza sorgusu ve bazı teknik SDK bileşenleri veri işleyebilir. Pro kullanıcılarında reklam yükleme ve UMP çağrısı uygulama koduyla engellenir; Android düzeyinde bazı SDK başlangıç bileşenleri yine çalışabilir. Gerçek ağ aktarımı cihaz ve yapılandırmaya göre değişebilir.</td>
+              <td>Aktarım sırasında TLS / HTTPS ile şifreli</td>
+            </tr>
+            <tr>
+              <td><strong>ML Kit kurulum kimliği ve teknik teşhis</strong></td>
+              <td>Google ML Kit (Google LLC)</td>
+              <td>Cihaz üzerinde OCR/QR işlevlerinin çalışması, performans ve hata teşhisi</td>
+              <td>Görüntü ve tanınan metin cihazda işlenir; SDK cihaz/uygulama bilgileri ve kurulum tanımlayıcılarını teknik amaçlarla işleyebilir.</td>
+              <td>Uzak aktarım gerçekleşirse TLS / HTTPS</td>
+            </tr>
+            <tr>
+              <td><strong>Satın Alma Geçmişi &amp; Anonim Kullanıcı Kimliği (<code>$RCAnonymousID:...</code>)</strong></td>
+              <td>RevenueCat Inc. &amp; Google Play Billing</td>
+              <td>Premium lisansın doğrulanması, abonelik yönetimi ve dolandırıcılığı önleme</td>
+              <td>Google Play Hizmetleri olan cihazlarda ilk açılışta anonim kullanıcı kimliği oluşturulur ve CustomerInfo sorgulanır (satın alma olmasa dahi). Satın alma veya geri yükleme yapıldığında Play Store işlem verileri doğrulanır.</td>
+              <td>Aktarım sırasında TLS / HTTPS ile şifreli</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Veri Paylaşımı, Üçüncü Taraflar ve Harici Mesajlaşma Aktarımları</h2>
+      <p>Kişisel verileriniz, mesajlaşma geçmişiniz, kasa notlarınız veya oluşturduğunuz şablonlar üçüncü taraf veri komisyoncularına veya pazarlama şirketlerine <strong>satılmaz</strong> veya devredilmez.</p>
+      
+      <p>Uygulama içinde yer alan resmî SDK'ların gizlilik bildirimleri:</p>
+      <ul>
+        <li><strong>Google Mobile Ads (AdMob) &amp; UMP:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Gizlilik Politikası</a></li>
+        <li><strong>RevenueCat:</strong> <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Gizlilik Politikası</a></li>
+        <li><strong>Google ML Kit:</strong> <a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener">Google ML Kit</a></li>
+        <li><strong>Google Play Billing:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Hizmetleri</a></li>
+      </ul>
+
+      <div class="notice-box">
+        <strong>Kullanıcının Mesajlaşma Uygulamalarına Aktardığı Veriler:</strong> Quick Message, kullanıcının talebi ve onayı ile mesaj metnini ve hedef telefon numarasını seçilen harici mesajlaşma uygulamasına (WhatsApp, Telegram, Signal, Viber, WeChat veya SMS) standart Android Intent / URL şemaları aracılığıyla iletir. Veri seçilen üçüncü taraf uygulamaya devredildikten sonra, mesajın iletimi, şifrelenmesi, saklanması ve işlenmesi tamamen ilgili mesajlaşma servisinin kendi gizlilik politikalarına ve kullanım koşullarına tabidir. Quick Message bu harici aktarımdan sonraki süreçler üzerinde hiçbir erişim veya denetim sahibi değildir.
+      </div>
+
+      <h2>3. Veri Saklama, Silme ve Kullanıcı Hakları</h2>
+      <p>Uygulamada hesap kaydı bulunmadığından cihazınızdaki verilerin mülkiyeti ve yönetimi size aittir. Yerel verilerin silinmesi ile üçüncü taraf sunuculardaki kayıtların durumu birbirinden ayrı olarak şu şekildedir:</p>
+
+      <h3>A. Yerel Verilerin Saklanması ve Silinmesi</h3>
+      <ul>
+        <li><strong>Uygulama İçi Silme:</strong> Kayıtlı şablonları, hızlı yanıtları, konumları veya kasa girdilerini uygulama arayüzünden dilediğiniz zaman tek tek silebilirsiniz.</li>
+        <li><strong>Cihazdan Tam Silme:</strong> Android sistem ayarlarından <em>Uygulamalar &gt; Quick Message &gt; Depolama &gt; Verileri Temizle</em> adımlarını izleyerek veya uygulamayı kaldırarak cihazda saklanan tüm verileri kalıcı ve geri getirilemez biçimde silebilirsiniz.</li>
+        <li><strong>Bulut Yedekleme ve Cihaz Aktarımı Kısıtlamaları:</strong> Uygulama manifestinde <code>android:allowBackup="false"</code> tanımlanmış; <code>backup_rules</code> ve <code>data_extraction_rules</code> yapılandırmalarıyla yerel veriler standart Google Drive bulut yedeklemelerinden ve standart Android cihazdan cihaza (D2D) veri aktarımlarından hariç tutulmuştur. Ancak üreticilere özgü özel transfer araçları (ör. Smart Switch, Mi Mover) veya yetkili (root) araçların sistem düzeyindeki davranışları işletim sistemi üreticilerine göre farklılık gösterebilir; yerel depolamanın nihai güvenliği ve silinmesi kullanıcının cihaz denetimindedir.</li>
+        <li><strong>Veri Dışa Aktarma:</strong> Araçlar menüsünden şablonlarınızı standart JSON olarak dışa aktarabilir veya parola korumalı AES-256 <code>.enc</code> formatında cihazınıza yedekleyebilirsiniz.</li>
+      </ul>
+
+      <h3>B. Üçüncü Taraf Sunuculardaki Verilerin Durumu ve Silme Talepleri</h3>
+      <ul>
+        <li><strong>Yerel Veri Silmeden Bağımsızlık:</strong> Uygulama verilerinin telefondan silinmesi veya uygulamanın kaldırılması, üçüncü taraf hizmet sağlayıcıların (Google AdMob ve RevenueCat) kendi sunucularında tuttuğu telemetri veya satın alma kayıtlarını otomatik olarak silmez.</li>
+        <li><strong>Reklam Kimliğini Sıfırlama:</strong> Cihaz ayarlarınızdan <em>Google &gt; Reklamlar &gt; Reklam Kimliğini Sıfırla / Sil</em> seçeneğini kullanarak AdMob reklam kimliğinizi silebilir veya geçmiş reklam profili eşleşmelerini koparabilirsiniz.</li>
+        <li><strong>Satın Alma Verisi Silme Talebi:</strong> RevenueCat sunucularında saklanan anonim satın alma geçmişinizin ve işlem kayıtlarınızın silinmesi talebi için Google Play sipariş numaranızla birlikte <a href="mailto:trickybogard@gmail.com">trickybogard@gmail.com</a> adresine e-posta gönderebilirsiniz.</li>
+      </ul>
+
+      <h2>4. Çocukların Gizliliği</h2>
+      <p>Quick Message, 13 yaşın (veya bulunduğunuz ülkedeki yasal yaş sınırının) altındaki çocuklara yönelik özel bir içerik barındırmaz ve bilerek çocuklardan kişisel veri toplamaz. Uygulama Google Play PEGI 3 / Everyone derecelendirmesine uygundur.</p>
+
+      <h2>5. Politika Değişiklikleri</h2>
+      <p>Bu politika metni yasal, teknik veya operasyonel gereksinimler doğrultusunda güncellenebilir. Güncel metin her zaman bu sayfa üzerinden erişilebilir kalacak ve uygulama içi Ayarlar ekranından doğrudan görüntülenebilecektir.</p>
+
+      <h2>6. Doğrulanmış İletişim Kanalı</h2>
+      <p>Gizlilik uygulamaları, veri hakları veya veri silme talepleriniz için doğrudan geliştiriciyle iletişime geçebilirsiniz:</p>
+      <p><strong>Geliştirici:</strong> Kenan Ergin (TrickyBogard)<br>
+      <strong>E-posta:</strong> <a href="mailto:trickybogard@gmail.com">trickybogard@gmail.com</a><br>
+      <strong>Web Sitesi:</strong> <a href="https://trickybogard.github.io" target="_blank" rel="noopener">https://trickybogard.github.io</a></p>
+    </div>
+
+    <!-- ENGLISH SECTION -->
+    <div id="section-en" class="lang-section">
+      <p>This Privacy Policy applies to the <strong>Quick Message</strong> mobile application (Package Name: <code>com.trickybogard.quickwa</code>), developed and published by <strong>Kenan Ergin (TrickyBogard)</strong> ("Developer", "we", "us").</p>
+      
+      <p>Quick Message is architected under a strict <strong>local-first privacy</strong> principle. The developer does NOT own, operate, or maintain any external user databases, user account servers, or centralized authentication backends.</p>
+
+      <h2>1. Information We Collect and Process</h2>
+      <p>Data processing is classified into three categories:</p>
+
+      <h3>A. Local-Only Device Data (Never Transmitted to Servers)</h3>
+      <ul>
+        <li><strong>Message Compositions &amp; Quick Replies:</strong> Text drafted in the composer and saved quick replies remain strictly in local storage on your physical device.</li>
+        <li><strong>Dynamic Templates:</strong> Reusable message templates containing placeholder chips (e.g., customer name, order number) are stored exclusively on your phone.</li>
+        <li><strong>Saved Locations &amp; Map Links:</strong> Manually added address notes and Google Maps hyperlinks are stored locally. The app contains no background GPS or real-time location tracking features.</li>
+        <li><strong>Secure Vault Records:</strong> Confidential notes and sensitive records are encrypted locally with <strong>AES-256-GCM</strong> encryption using cryptographic keys stored in the Android Keystore (via <code>flutter_secure_storage</code>). Biometric verification (fingerprint) is managed by the Android operating system via the standard <code>BiometricPrompt</code> API leveraging hardware-backed security components where supported. The 4-digit PIN is stored within this Keystore-encrypted local envelope, and verification is performed locally on the device; cryptographic keys and credentials are never transmitted over the network or shared with the developer.</li>
+      </ul>
+
+      <h3>B. On-Device Transient Processing (Camera &amp; OCR)</h3>
+      <ul>
+        <li><strong>Camera Permission:</strong> Camera access is requested strictly when you tap the OCR scan or QR scanning feature to recognize phone numbers from cards, signs, or printed text.</li>
+        <li><strong>Google ML Kit On-Device:</strong> Optical character recognition (OCR) and QR/barcode recognition are performed on-device using Google ML Kit components. Images, camera feeds, and extracted text are never uploaded to remote servers or Google cloud services. Google ML Kit may process technical device/app information and installation-level identifiers for SDK operation and diagnostics. The text recognizer is closed after recognition. Any temporary image files generated by the camera or image picker remain in the app's temporary local cache directory subject to Android OS cache maintenance and user cache clearance.</li>
+      </ul>
+
+      <h3>C. Data Handled by Third-Party SDKs</h3>
+      <p>To support its technical functions, the app integrates Google Mobile Ads, UMP, RevenueCat and Google ML Kit SDKs, which may process the following data:</p>
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Service Provider</th>
+              <th>Purpose</th>
+              <th>Collection / Sharing Timing</th>
+              <th>Security</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Advertising ID (AAID / AD_ID), Approximate Location (IP-derived), App Launch/Session Interactions, Diagnostics &amp; Crash Logs</strong></td>
+              <td>Google AdMob &amp; UMP (Google LLC)</td>
+              <td>Consent management (UMP), app launch/session analytics, fraud prevention and technical diagnostics. In-app ad serving is disabled in the current build.</td>
+              <td>For free-tier users, UMP consent checks and some technical SDK components may process data. For Pro users, the app disables ad loading and UMP calls, but Android-level SDK startup components may still run. Actual network transfers depend on device and configuration.</td>
+              <td>Encrypted in transit (TLS / HTTPS)</td>
+            </tr>
+            <tr>
+              <td><strong>ML Kit installation identifier and diagnostics</strong></td>
+              <td>Google ML Kit (Google LLC)</td>
+              <td>On-device OCR/QR functionality, performance and diagnostics</td>
+              <td>Images and extracted text are processed on-device; the SDK may process device/app information and installation identifiers for technical purposes.</td>
+              <td>TLS / HTTPS for any network transfers</td>
+            </tr>
+            <tr>
+              <td><strong>Purchase History &amp; Anonymous App User ID (<code>$RCAnonymousID:...</code>)</strong></td>
+              <td>RevenueCat Inc. &amp; Google Play Billing</td>
+              <td>Validating Pro entitlements, subscription management, and fraud prevention</td>
+              <td>On devices with Google Play Services, an anonymous user ID is created and CustomerInfo is queried on initial launch (even without a purchase). When a purchase or restore occurs, Play Store receipt tokens are verified.</td>
+              <td>Encrypted in transit (TLS / HTTPS)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Data Sharing, Third Parties, and External Messaging Hand-off</h2>
+      <p>We do NOT sell, lease, or rent your personal data, messages, contact lists, or vault entries to third-party data brokers or marketing agencies.</p>
+      
+      <p>Official third-party SDK privacy policies:</p>
+      <ul>
+        <li><strong>Google Mobile Ads (AdMob) &amp; UMP:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        <li><strong>RevenueCat:</strong> <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li>
+        <li><strong>Google ML Kit:</strong> <a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener">Google ML Kit</a></li>
+        <li><strong>Google Play Billing:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services</a></li>
+      </ul>
+
+      <div class="notice-box">
+        <strong>Data Transferred to External Messaging Applications:</strong> Upon user initiation, Quick Message transfers the drafted text and destination phone number to the selected third-party messaging application (WhatsApp, Telegram, Signal, Viber, WeChat, or native SMS) via standard Android Intent / URL schemes. Once handed over to the external application, all subsequent transmission, encryption, storage, and processing are governed entirely by the privacy policies and terms of service of the respective messaging platform. Quick Message exercises no control over and retains no access to data processed by external messaging providers.
+      </div>
+
+      <h2>3. Data Retention, Deletion, and User Rights</h2>
+      <p>Because Quick Message does not maintain cloud user accounts, you retain total ownership of your local data. Local data deletion and third-party server records are distinguished as follows:</p>
+
+      <h3>A. Local Data Retention &amp; Deletion</h3>
+      <ul>
+        <li><strong>In-App Deletion:</strong> You can delete any individual template, shortcut, saved location, or vault entry directly inside the user interface at any time.</li>
+        <li><strong>Complete Local Erasure:</strong> You can wipe all stored data permanently by opening Android system settings &gt; <em>Apps &gt; Quick Message &gt; Storage &gt; Clear Storage / Clear Data</em>, or by uninstalling the application.</li>
+        <li><strong>Cloud Backup and Device Transfer Limitations:</strong> The application manifest explicitly declares <code>android:allowBackup="false"</code>, and <code>backup_rules</code> and <code>data_extraction_rules</code> exclude local data from standard Google Drive cloud backups and standard Android device-to-device (D2D) transfers. However, proprietary OEM transfer tools (such as Smart Switch or Mi Mover) or root-level utilities may behave differently at the OS level; final control of device storage rests with the user.</li>
+        <li><strong>Export &amp; Backup:</strong> You can export your template library as standard JSON, or generate a password-protected AES-256 <code>.enc</code> archive via the Tools screen.</li>
+      </ul>
+
+      <h3>B. Third-Party Server Data &amp; Deletion Requests</h3>
+      <ul>
+        <li><strong>Independence from Local Deletion:</strong> Deleting local application data or uninstalling the app does NOT automatically delete server-side logs or purchase records maintained by third-party providers (Google AdMob and RevenueCat).</li>
+        <li><strong>Resetting Advertising ID:</strong> You may reset or delete your advertising identifier at any time via Android Settings &gt; <em>Google &gt; Ads &gt; Reset advertising ID / Delete advertising ID</em> to unlink past ad activity.</li>
+        <li><strong>Purchase Data Deletion Request:</strong> To request deletion of anonymous purchase records stored on RevenueCat servers, contact <a href="mailto:trickybogard@gmail.com">trickybogard@gmail.com</a> with your Google Play order number.</li>
+      </ul>
+
+      <h2>4. Children's Privacy</h2>
+      <p>Quick Message is not directed at children under the age of 13 (or applicable local age limit). We do not knowingly collect personal information from children. The app complies with PEGI 3 / Everyone ratings.</p>
+
+      <h2>5. Changes to This Privacy Policy</h2>
+      <p>We may periodically update this policy to reflect operational, legal, or regulatory changes. Updated versions will be published on this page and remain directly accessible from the in-app Settings screen.</p>
+
+      <h2>6. Verified Contact Channel</h2>
+      <p>For questions, privacy inquiries, or data deletion requests, please contact the developer directly:</p>
+      <p><strong>Developer:</strong> Kenan Ergin (TrickyBogard)<br>
+      <strong>Email:</strong> <a href="mailto:trickybogard@gmail.com">trickybogard@gmail.com</a><br>
+      <strong>Website:</strong> <a href="https://trickybogard.github.io" target="_blank" rel="noopener">https://trickybogard.github.io</a></p>
+    </div>
+
+    <div class="footer">
+      &copy; 2026 Kenan Ergin (TrickyBogard). All rights reserved. | Quick Message (com.trickybogard.quickwa)
+    </div>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      const trSection = document.getElementById('section-tr');
+      const enSection = document.getElementById('section-en');
+      const title = document.getElementById('page-title');
+      const badge = document.getElementById('meta-badge');
+      const subMeta = document.getElementById('sub-meta');
+      const buttons = document.querySelectorAll('.lang-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      if (lang === 'tr') {
+        trSection.classList.add('visible');
+        enSection.classList.remove('visible');
+        buttons[0].classList.add('active');
+        title.innerText = 'Quick Message — Gizlilik Politikası';
+        badge.innerText = 'Veri Kullanımı ve Gizlilik Bilgilendirmesi';
+        subMeta.innerHTML = 'Son Güncelleme: 16 Kasım 2026 | Uygulama Kimliği: <code>com.trickybogard.quickwa</code>';
+        document.documentElement.lang = 'tr';
+      } else {
+        trSection.classList.remove('visible');
+        enSection.classList.add('visible');
+        buttons[1].classList.add('active');
+        title.innerText = 'Quick Message — Privacy Policy';
+        badge.innerText = 'Privacy & Data Use Notice';
+        subMeta.innerHTML = 'Last Updated: November 16, 2026 | Package ID: <code>com.trickybogard.quickwa</code>';
+        document.documentElement.lang = 'en';
+      }
+    }
+  </script>
 </body>
 </html>
