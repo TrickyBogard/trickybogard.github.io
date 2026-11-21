@@ -73,7 +73,7 @@ const catalog=window.TB_CATALOG&&Array.isArray(window.TB_CATALOG.apps)?window.TB
 const params=new URLSearchParams(location.search);
 let lang=params.get('lang')==='en'||(!params.has('lang')&&navigator.language.toLowerCase().startsWith('en'))?'en':'tr';
 function el(name,cls,value){const n=document.createElement(name);if(cls)n.className=cls;if(value!==undefined)n.textContent=value;return n;}
-function safeUrl(value){try{const u=new URL(value,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:null}catch(e){return null;}}
+function safeUrl(value){if(typeof value!=='string'||!value.trim())return null;try{const u=new URL(value,location.origin);return u.protocol==='https:'||(u.protocol==='http:'&&u.origin===location.origin)?u.href:null}catch(e){return null;}}
 function render(){
  const d=lang==='en'?en:tr;
  document.documentElement.lang=lang;
