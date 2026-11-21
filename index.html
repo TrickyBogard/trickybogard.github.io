@@ -1,54 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrickyBogard Apps - Mobil Çözümler</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
-        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #eee; margin-bottom: 30px; }
-        h1 { color: #2c3e50; margin: 0; }
-        .app-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 20px; margin-bottom: 20px; transition: transform 0.2s; }
-        .app-card:hover { transform: translateY(-5px); }
-        .app-icon { width: 80px; height: 80px; background: #02173a; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
-        .app-info { flex-grow: 1; }
-        .app-title { font-size: 1.4rem; font-weight: bold; margin: 0 0 5px 0; color: #2c3e50; }
-        .app-desc { font-size: 0.95rem; color: #666; margin: 0; }
-        .legal-footer { text-align: center; margin-top: 50px; font-size: 0.85rem; color: #888; border-top: 1px solid #eee; padding-top: 20px; }
-        .legal-link { color: #3498db; text-decoration: none; margin: 0 10px; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07152c">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index,follow">
+<meta name="description" content="TrickyBogard Apps — bağımsız, kullanışlı mobil uygulamalar. Quick Message ile rehbere kaydetmeden farklı platformlarda sohbet başlatın.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrickyBogard Apps">
+<meta property="og:title" content="TrickyBogard Apps">
+<meta property="og:description" content="Bağımsız ve kullanışlı mobil uygulamalar.">
+<meta property="og:url" content="https://trickybogard.github.io/">
+<link rel="canonical" href="https://trickybogard.github.io/">
+<link rel="alternate" hreflang="tr" href="https://trickybogard.github.io/?lang=tr">
+<link rel="alternate" hreflang="en" href="https://trickybogard.github.io/?lang=en">
+<link rel="icon" type="image/png" href="/assets/quick-message-icon.png">
+<title>TrickyBogard Apps — Mobil Uygulamalar</title>
+<style>
+:root{color-scheme:dark;--bg:#07152c;--bg2:#0c2040;--card:#0e2746;--line:#29415f;--text:#f0f8ff;--muted:#b1c3d7;--accent:#69e9d4;--subtle:#9acdf1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body:before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0 0 auto;height:730px;background:radial-gradient(ellipse at 83% 7%,#1a5f8560 0%,transparent 58%),radial-gradient(ellipse at 0 25%,#0f6f7060,transparent 45%)}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.skip{position:absolute;top:-100px;left:12px;background:#fff;color:#07152c;padding:10px 15px;z-index:5;border-radius:9px}.skip:focus{top:12px}
+nav.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0}.brand{display:flex;gap:11px;align-items:center;text-decoration:none;font-weight:850;font-size:1.22rem;letter-spacing:-.035em}.brand-logo{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#5af4c5,#39a8e8);color:#07152c;font-size:1.28rem}.brand b{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:24px}.nav-links>a{text-decoration:none;font-size:.94rem;color:var(--muted)}.lang{display:flex;gap:3px;align-items:center;border:1px solid var(--line);border-radius:100px;padding:4px}.lang button{appearance:none;border:0;background:none;color:var(--muted);font:inherit;font-size:.88rem;cursor:pointer;padding:6px 14px;border-radius:90px}.lang button[aria-pressed="true"]{color:#051b29;background:var(--accent);font-weight:850}
+.hero{padding:82px 0 68px;max-width:840px}.overline{font-size:.79rem;letter-spacing:.15em;font-weight:800;text-transform:uppercase;color:var(--accent)}h1{font-size:clamp(2.45rem,7vw,5.9rem);letter-spacing:-.067em;line-height:1.05;margin:18px 0 21px;white-space:pre-line}.hero p{font-size:clamp(1.03rem,2.4vw,1.25rem);color:var(--muted);max-width:640px;margin:0}.scroll-link{display:inline-flex;align-items:center;gap:10px;margin-top:27px;color:var(--accent);font-weight:800;text-decoration:none}
+.sec-title{border-bottom:1px solid var(--line);padding-bottom:23px;margin-bottom:24px}.sec-title h2{font-size:clamp(1.5rem,3vw,2.2rem);margin:0;letter-spacing:-.05em}.sec-title p{color:var(--muted);margin:3px 0 0}.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,435px),1fr));gap:21px;padding-bottom:65px}.app-card{padding:clamp(24px,3vw,34px);background:linear-gradient(135deg,#163557 0%,#0d2340 90%);border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 50px #0002}.app-head{display:flex;align-items:center;justify-content:space-between;gap:14px}.app-icon{height:82px;width:82px;border-radius:23px;object-fit:cover;background:#03132e;border:1px solid #325a73}.app-initials{height:82px;width:82px;border-radius:23px;display:grid;place-items:center;background:#0f4264;font-weight:900;font-size:1.3rem}.pill{border:1px solid #2b7e76;background:#103d45;color:#a1f3e5;border-radius:30px;padding:5px 12px;font-size:.76rem;font-weight:750}.app-card h3{font-size:1.95rem;letter-spacing:-.04em;margin:18px 0 3px}.app-summary{font-size:1.08rem;font-weight:700;margin:0 0 10px}.app-detail{color:var(--muted);margin:0 0 17px}.features{padding:0;margin:0 0 24px;list-style:none;display:grid;gap:8px}.features li{color:#dceaf5;font-size:.93rem}.features li:before{content:"✓";margin-right:10px;font-weight:900;color:var(--accent)}.app-actions{display:flex;flex-wrap:wrap;align-items:center;gap:15px}.primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:12px;background:var(--accent);color:#05192b;font-weight:850;text-decoration:none}.primary:hover{background:#95f4e3}.secondary{text-decoration:none;color:#c9e5f6;font-size:.9rem;border-bottom:1px solid #6b95ac}.secondary:hover{color:white}
+.message{margin-bottom:70px;padding:29px 33px;border:1px solid var(--line);border-radius:22px;background:#0d2441}.message h2{font-size:1.35rem;margin:0 0 7px}.message p{margin:0;max-width:720px;color:var(--muted)}
+footer{display:flex;align-items:start;justify-content:space-between;flex-wrap:wrap;gap:22px;border-top:1px solid var(--line);padding:31px 0 43px;color:var(--muted);font-size:.9rem}.foot-links{display:flex;flex-wrap:wrap;gap:19px}.foot-links a{text-decoration:none}.disclaimer{max-width:560px;margin:6px 0;font-size:.82rem;color:#91a9c5}.copyright{width:100%;font-size:.8rem}
+@media(max-width:650px){.wrap{width:min(1120px,calc(100% - 28px))}nav.top{padding:16px 0}.nav-links{gap:8px}.nav-links>a{display:none}.hero{padding:48px 0 56px}.apps{padding-bottom:43px}.app-card{padding:24px}footer{padding-top:26px}.message{padding:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-
-<header>
-    <h1>TrickyBogard Apps</h1>
-    <p>Hayatı kolaylaştıran akıllı mobil uygulamalar.</p>
-</header>
-
-<div id="apps-container">
-    <div class="app-card">
-        <div class="app-icon">QM</div>
-        <div class="app-info">
-            <h2 class="app-title">Quick Message</h2>
-            <p class="app-desc">Rehbere kaydetmeden mesaj başlatma, hazır ve dinamik şablonlar, cihaz içi OCR, zamanlama hatırlatıcıları ve şifreli kasa. Ücretsiz sürümde bazı kayıt limitleri bulunur.</p>
-        </div>
-    </div>
-
-    <div class="app-card" style="opacity: 0.6; border: 2px dashed #ccc; box-shadow: none;">
-        <div class="app-icon" style="background: #95a5a6;">+</div>
-        <div class="app-info">
-            <h2 class="app-title">Yakında...</h2>
-            <p class="app-desc">Yeni projelerimiz yolda, takipte kalın.</p>
-        </div>
-    </div>
-</div>
-
-<footer class="legal-footer">
-    <p>&copy; 2026 TrickyBogard Apps. Tüm hakları saklıdır.</p>
-    <a href="privacy.html" class="legal-link">Quick Message Gizlilik Politikası</a>
-    <a href="terms.html" class="legal-link">Kullanım Şartları</a>
-    <a href="mailto:trickybogard@gmail.com" class="legal-link">İletişim: trickybogard@gmail.com</a>
-</footer>
-
+<a class="skip" href="#main" data-t="skip">İçeriğe atla</a>
+<div class="wrap">
+<nav class="top" aria-label="Main navigation">
+ <a class="brand" href="/" aria-label="TrickyBogard Apps"><span class="brand-logo" aria-hidden="true">T</span><span>TrickyBogard <b>Apps</b></span></a>
+ <div class="nav-links"><a href="#products" data-t="navApps">Uygulamalar</a><div class="lang" role="group" aria-label="Language / Dil">
+ <button data-lang="tr" aria-pressed="true" type="button">TR</button><button data-lang="en" aria-pressed="false" type="button">EN</button></div></div>
+</nav>
+<main id="main">
+<section class="hero" aria-labelledby="headline">
+ <div class="overline" data-t="eyebrow">BAĞIMSIZ MOBİL UYGULAMALAR</div>
+ <h1 id="headline" data-t="heroTitle">Daha az uğraş.
+Daha çok ilerle.</h1>
+ <p data-t="heroBody">Günlük işlerini kolaylaştıran, kullanışlı ve özenle geliştirilen mobil araçlar. Her üründe gerçek bir ihtiyaca odaklanıyoruz.</p>
+ <a class="scroll-link" href="#products" data-t="discover">Uygulamaları keşfet ↓</a>
+</section>
+<section id="products" aria-labelledby="products-title">
+ <div class="sec-title"><h2 id="products-title" data-t="products">Uygulamalarımız</h2><p data-t="productsSub">Günlük hayat ve iş için pratik çözümler.</p></div>
+ <div class="apps" id="catalog">
+  <article class="app-card"><h3>Quick Message</h3><p>Rehbere kaydetmeden hızlı iletişim.</p><a href="https://play.google.com/store/apps/details?id=com.trickybogard.quickwa">Google Play</a></article>
+ </div>
+ <noscript><p><a href="https://play.google.com/store/apps/details?id=com.trickybogard.quickwa">Quick Message on Google Play</a></p></noscript>
+</section>
+<section class="message" aria-labelledby="message-title"><h2 id="message-title" data-t="missionTitle">Basit fikirler, işe yarayan araçlar.</h2><p data-t="missionText">Yeni uygulamalar yayımlandıkça burada kendi sayfaları, açıklamaları ve mağaza bağlantılarıyla yer alacak. Yayımlanmamış ürünleri tanıtmıyoruz.</p></section>
+</main>
+<footer>
+ <div><strong style="color:var(--text)">TrickyBogard Apps</strong><p class="disclaimer" data-t="disclaimer">Bağımsız geliştirilen uygulamalar. Üçüncü taraf mesajlaşma hizmetleriyle resmî bağlantımız yoktur.</p></div>
+ <div class="foot-links"><a href="#products" data-t="navApps">Uygulamalar</a><a href="/privacy.html" data-legal="privacy" data-t="privacy">Gizlilik Politikası</a><a href="/terms.html" data-legal="terms" data-t="terms">Kullanım Şartları</a><a href="https://play.google.com/store/apps/details?id=com.trickybogard.quickwa" data-t="support">Destek</a></div>
+ <div class="copyright">© <span id="year">2026</span> TrickyBogard Apps.</div>
+</footer></div>
+<script src="/apps.js"></script>
+<script>
+(function(){
+'use strict';
+const tr={skip:'İçeriğe atla',navApps:'Uygulamalar',eyebrow:'Bağımsız mobil uygulamalar',heroTitle:'Daha az uğraş.\nDaha çok ilerle.',heroBody:'Günlük işlerini kolaylaştıran, kullanışlı ve özenle geliştirilen mobil araçlar. Her üründe gerçek bir ihtiyaca odaklanıyoruz.',discover:'Uygulamaları keşfet ↓',products:'Uygulamalarımız',productsSub:'Günlük hayat ve iş için pratik çözümler.',missionTitle:'Basit fikirler, işe yarayan araçlar.',missionText:'Yeni uygulamalar yayımlandıkça burada kendi sayfaları, açıklamaları ve mağaza bağlantılarıyla yer alacak. Yayımlanmamış ürünleri tanıtmıyoruz.',disclaimer:'Bağımsız geliştirilen uygulamalar. Üçüncü taraf mesajlaşma hizmetleriyle resmî bağlantımız yoktur.',privacy:'Gizlilik Politikası',terms:'Kullanım Şartları',support:'Destek',play:'Google Play’de görüntüle',soon:'Hazırlanıyor'};
+const en={skip:'Skip to content',navApps:'Apps',eyebrow:'Independent mobile apps',heroTitle:'Less friction.\nMore progress.',heroBody:'Useful, thoughtfully built mobile tools that simplify everyday tasks. Each product focuses on solving a real problem.',discover:'Explore our apps ↓',products:'Our apps',productsSub:'Practical tools for work and everyday life.',missionTitle:'Simple ideas. Useful tools.',missionText:'As we release new apps, they will appear here with their own descriptions and store links. We do not promote unreleased products.',disclaimer:'Independently developed apps. Not officially affiliated with third-party messaging platforms.',privacy:'Privacy Policy',terms:'Terms of Use',support:'Support',play:'View on Google Play',soon:'In development'};
+const catalog=window.TB_CATALOG&&Array.isArray(window.TB_CATALOG.apps)?window.TB_CATALOG.apps:[];
+const params=new URLSearchParams(location.search);
+let lang=params.get('lang')==='en'||(!params.has('lang')&&navigator.language.toLowerCase().startsWith('en'))?'en':'tr';
+function el(name,cls,value){const n=document.createElement(name);if(cls)n.className=cls;if(value!==undefined)n.textContent=value;return n;}
+function safeUrl(value){if(typeof value!=='string'||!value.trim())return null;try{const u=new URL(value,location.origin);return u.protocol==='https:'||(u.protocol==='http:'&&u.origin===location.origin)?u.href:null}catch(e){return null;}}
+function render(){
+ const d=lang==='en'?en:tr;
+ document.documentElement.lang=lang;
+ document.title=lang==='en'?'TrickyBogard Apps — Mobile Applications':'TrickyBogard Apps — Mobil Uygulamalar';
+ document.querySelector('meta[name="description"]').content=lang==='en'?'TrickyBogard Apps — independent, practical mobile tools. Meet Quick Message.':'TrickyBogard Apps — bağımsız ve kullanışlı mobil uygulamalar. Quick Message ile tanışın.';
+ document.querySelectorAll('[data-t]').forEach(n=>{const t=d[n.dataset.t];if(t!==undefined)n.textContent=t;});
+ document.querySelectorAll('[data-lang]').forEach(n=>n.setAttribute('aria-pressed',String(n.dataset.lang===lang)));
+ document.querySelectorAll('[data-legal]').forEach(n=>n.href='/'+(n.dataset.legal==='privacy'?'privacy':'terms')+'.html?lang='+lang);
+ const root=document.getElementById('catalog');root.replaceChildren();
+ for(const item of catalog){
+  const copy=item[lang]||item.tr;if(!copy)continue;
+  const card=el('article','app-card');const head=el('div','app-head');
+  if(item.icon){const icon=document.createElement('img');icon.className='app-icon';icon.src=item.icon;icon.alt=copy.name+' icon';icon.width=82;icon.height=82;head.append(icon);}
+  else head.append(el('div','app-initials',item.initials||'APP'));
+  head.append(el('span','pill',item.platform||'Android'));
+  card.append(head,el('h3','',copy.name),el('p','app-summary',copy.summary),el('p','app-detail',copy.detail));
+  const features=el('ul','features');for(const feature of (copy.features||[])){features.append(el('li','',feature));}card.append(features);
+  const actions=el('div','app-actions'),url=safeUrl(item.playUrl);
+  if(item.status==='live'&&url){const b=el('a','primary',d.play);b.href=url;b.target='_blank';b.rel='noopener noreferrer';actions.append(b);}
+  else actions.append(el('span','pill',d.soon));
+  for(const [key,link] of [['privacy',item.privacyUrl],['terms',item.termsUrl]]){
+   const legal=safeUrl(link);if(!legal)continue;
+   const a=el('a','secondary',d[key]);a.href=legal+(legal.includes('?')?'&':'?')+'lang='+lang;actions.append(a);
+  }
+  card.append(actions);root.append(card);
+ }
+}
+document.getElementById('year').textContent=String(new Date().getFullYear());
+document.querySelectorAll('[data-lang]').forEach(n=>n.addEventListener('click',()=>{lang=n.dataset.lang;const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u);render();}));
+render();
+})();
+</script>
 </body>
 </html>

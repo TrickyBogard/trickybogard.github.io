@@ -1,17 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Terms of Use - Quick Message</title>
-    <style>body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Quick Message — Kullanım Şartları / Terms of Use">
+<link rel="canonical" href="https://trickybogard.github.io/terms.html">
+<title>Quick Message — Kullanım Şartları / Terms of Use</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color-scheme:light dark}*{box-sizing:border-box}body{margin:0;background:#f5f8fc;color:#142b46;line-height:1.75}.wrap{width:min(830px,calc(100% - 32px));margin:38px auto 75px}header{display:flex;align-items:center;justify-content:space-between;gap:20px}a{color:#146b9c}.switch{display:flex;gap:6px}button{cursor:pointer;font:inherit;border:1px solid #7596ab;color:#15314d;background:#fff;padding:5px 15px;border-radius:50px}button[aria-pressed=true]{color:#fff;background:#15466a}.paper{border:1px solid #d9e7f0;background:#fff;border-radius:19px;padding:clamp(20px,5vw,43px);margin-top:25px}.paper h1{margin-top:0;font-size:1.8rem;line-height:1.3}.paper li{margin:9px 0}.hidden{display:none}footer{margin-top:28px;color:#566e83;font-size:.9rem}a:focus-visible,button:focus-visible{outline:3px solid #13a3b6;outline-offset:3px}
+@media(prefers-color-scheme:dark){body{background:#07152c;color:#eaf5ff}.paper{background:#0e2746;border-color:#2c4868}a{color:#7ee4da}button{background:#17385d;color:#fff}footer{color:#a8bdd1}}
+</style>
 </head>
-<body>
-    <h1>Kullanım Şartları</h1>
-    <p>1. Quick Message, rehbere numara eklemeden mesaj başlatmanızı sağlayan bir yardımcı araçtır.</p>
-    <p>2. Bu uygulama WhatsApp, Signal veya Telegram ile resmi bir bağı bulunmayan bağımsız bir projedir.</p>
-    <p>3. Kullanıcı, gönderdiği mesajların içeriğinden ve platform kurallarına (Spam vb.) uymaktan bizzat sorumludur.</p>
-    <p>4. Uygulamanın kötüye kullanımı sonucu oluşabilecek hesap kısıtlamalarından geliştirici sorumlu tutulamaz.</p>
-    <p>İletişim: <a href="mailto:trickybogard@gmail.com">trickybogard@gmail.com</a></p>
-    <p>Gizlilik bilgileri için <a href="privacy.html">Quick Message Gizlilik Politikası</a> sayfasına bakabilirsiniz.</p>
-</body>
-</html>
+<body><main class="wrap">
+<header><a id="home" href="/?lang=tr">← TrickyBogard Apps</a><div class="switch" role="group" aria-label="Dil / Language"><button type="button" data-lang="tr" aria-pressed="true">TR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div></header>
+<article id="tr" class="paper"><h1>Quick Message — Kullanım Şartları</h1><ol>
+<li>Quick Message, rehbere numara eklemeden mesaj başlatmanızı sağlayan bir yardımcı araçtır.</li>
+<li>Bu uygulama WhatsApp, Signal veya Telegram ile resmî bir bağı bulunmayan bağımsız bir projedir.</li>
+<li>Kullanıcı, gönderdiği mesajların içeriğinden ve platform kurallarına (spam kuralları dâhil) uymaktan bizzat sorumludur.</li>
+<li>Uygulamanın kötüye kullanımı sonucu oluşabilecek hesap kısıtlamalarından geliştirici sorumlu tutulamaz.</li>
+</ol><p>Gizlilik bilgileri için <a href="/privacy.html?lang=tr">Quick Message Gizlilik Politikası</a> sayfasına bakabilirsiniz.</p></article>
+<article id="en" class="paper hidden" lang="en"><h1>Quick Message — Terms of Use</h1><ol>
+<li>Quick Message is a utility that helps you start conversations without adding phone numbers to your contacts.</li>
+<li>This app is an independent project and is not officially affiliated with WhatsApp, Signal or Telegram.</li>
+<li>Users are responsible for the content of messages they send and for complying with the rules of the platforms they use, including anti-spam rules.</li>
+<li>The developer is not responsible for account restrictions resulting from misuse of the app.</li>
+</ol><p>For privacy information, see the <a href="/privacy.html?lang=en">Quick Message Privacy Policy</a>.</p></article>
+<footer><span id="support">İletişim: Google Play uygulama sayfasındaki geliştirici destek bilgileri.</span> <a href="https://play.google.com/store/apps/details?id=com.trickybogard.quickwa">Google Play</a></footer>
+</main>
+<script>
+(function(){'use strict';
+let lang=new URLSearchParams(location.search).get('lang')==='en'?'en':'tr';
+function setLanguage(value){lang=value;document.documentElement.lang=lang;document.getElementById('tr').classList.toggle('hidden',lang!=='tr');document.getElementById('en').classList.toggle('hidden',lang!=='en');document.getElementById('support').textContent=lang==='tr'?'İletişim: Google Play uygulama sayfasındaki geliştirici destek bilgileri.':'Contact: use the developer support details on the Google Play app page.';document.getElementById('home').href='/?lang='+lang;document.querySelectorAll('[data-lang]').forEach(n=>n.setAttribute('aria-pressed',String(n.dataset.lang===lang)));const u=new URL(location.href);u.searchParams.set('lang',lang);history.replaceState(null,'',u)}
+document.querySelectorAll('[data-lang]').forEach(n=>n.addEventListener('click',()=>setLanguage(n.dataset.lang)));
+setLanguage(lang);
+})();
+</script></body></html>
