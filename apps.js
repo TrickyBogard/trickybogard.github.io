@@ -4,7 +4,7 @@ window.TB_CATALOG={
   apps:[
     {
       id:'quick-message',status:'live',platform:'Android',
-      icon:'/assets/quick-message-icon.png',
+      icon:'/assets/quick-message-icon.png?v=4',
       playUrl:'https://play.google.com/store/apps/details?id=com.trickybogard.quickwa',
       privacyUrl:'/privacy.html',termsUrl:'/terms.html',
       tr:{
