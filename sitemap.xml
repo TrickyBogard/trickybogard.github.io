@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://trickybogard.github.io/</loc></url>
+  <url><loc>https://trickybogard.github.io/en/</loc></url>
+  <url><loc>https://trickybogard.github.io/de/</loc></url>
+  <url><loc>https://trickybogard.github.io/fr/</loc></url>
+  <url><loc>https://trickybogard.github.io/es/</loc></url>
+  <url><loc>https://trickybogard.github.io/it/</loc></url>
+  <url><loc>https://trickybogard.github.io/pt/</loc></url>
+  <url><loc>https://trickybogard.github.io/ru/</loc></url>
+  <url><loc>https://trickybogard.github.io/ja/</loc></url>
+  <url><loc>https://trickybogard.github.io/ko/</loc></url>
+  <url><loc>https://trickybogard.github.io/zh/</loc></url>
+  <url><loc>https://trickybogard.github.io/id/</loc></url>
+  <url><loc>https://trickybogard.github.io/hi/</loc></url>
+  <url><loc>https://trickybogard.github.io/vi/</loc></url>
+  <url><loc>https://trickybogard.github.io/ar/</loc></url>
   <url><loc>https://trickybogard.github.io/article-tr.html</loc></url>
   <url><loc>https://trickybogard.github.io/article-en.html</loc></url>
+  <url><loc>https://trickybogard.github.io/de/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/fr/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/es/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/it/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/pt/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/ru/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/ja/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/ko/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/zh/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/id/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/hi/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/vi/guide.html</loc></url>
+  <url><loc>https://trickybogard.github.io/ar/guide.html</loc></url>
   <url><loc>https://trickybogard.github.io/privacy.html</loc></url>
   <url><loc>https://trickybogard.github.io/terms.html</loc></url>
 </urlset>
