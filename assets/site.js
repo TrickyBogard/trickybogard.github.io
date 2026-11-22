@@ -67,5 +67,5 @@ let engaged=false;track.addEventListener('pointerenter',()=>engaged=true);track.
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)window.setInterval(()=>{if(!paused&&!engaged&&!document.hidden)goto(active+1)},6500);
 }
 const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
-window.QuickMessageLocales=langs;
+window.QuickMessageLocales=langs;window.QuickMessageText=data;
 })();
