@@ -52,19 +52,93 @@ if(q&&langs.includes(q)&&document.body.dataset.page==='home'&&path!==root(q)&&pa
 if(q&&langs.includes(q)&&document.body.dataset.page==='guide'&&path!==guide(q)){location.replace(guide(q));return}
 const track=document.getElementById('carouselTrack');
 if(track){
-const labels=[data.cap1,data.cap2,data.cap3,data.cap4,data.cap5,data.cap6];
-track.innerHTML=shots.map((src,i)=>'<div class="shot"><img loading="'+(i<2?'eager':'lazy')+'" width="166" height="296" src="'+src+'" alt="'+labels[i]+' — Quick Message Google Play"/><div class="shot-caption">'+labels[i]+'</div></div>').join('');
-const cards=Array.from(track.children);const dots=document.getElementById('carouselDots');
-dots.innerHTML=cards.map((_,i)=>'<button type="button" aria-label="'+(i+1)+'" aria-current="'+(i===0?'true':'false')+'"></button>').join('');
-const dotBtns=Array.from(dots.children);let active=0;let paused=false;const pause=document.getElementById('carouselPause');
-function goto(i){active=(i+cards.length)%cards.length;cards[active].scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',inline:'start',block:'nearest'});dotBtns.forEach((b,n)=>b.setAttribute('aria-current',n===active?'true':'false'))}
-document.getElementById('carouselPrev').addEventListener('click',()=>goto(active-1));
-document.getElementById('carouselNext').addEventListener('click',()=>goto(active+1));
-dotBtns.forEach((b,i)=>b.addEventListener('click',()=>goto(i)));
-pause.textContent=data.pause;pause.addEventListener('click',()=>{paused=!paused;pause.textContent=paused?data.resume:data.pause;pause.setAttribute('aria-pressed',paused?'true':'false')});
-track.addEventListener('scroll',()=>{const x=track.scrollLeft;const pos=cards.map(c=>Math.abs(c.offsetLeft-track.offsetLeft-x));const n=pos.indexOf(Math.min(...pos));if(n>=0){active=n;dotBtns.forEach((b,i)=>b.setAttribute('aria-current',i===n?'true':'false'))}},{passive:true});
-let engaged=false;track.addEventListener('pointerenter',()=>engaged=true);track.addEventListener('pointerleave',()=>engaged=false);track.addEventListener('focusin',()=>engaged=true);track.addEventListener('focusout',()=>engaged=false);
-if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)window.setInterval(()=>{if(!paused&&!engaged&&!document.hidden)goto(active+1)},6500);
+ const labels=[data.cap1,data.cap2,data.cap3,data.cap4,data.cap5,data.cap6];
+ const viewport=document.createElement('div');
+ viewport.className='carousel-viewport';
+ track.parentNode.insertBefore(viewport,track);
+ viewport.appendChild(track);
+ track.innerHTML=shots.map((src,i)=>'<div class="shot"><img loading="'+(i<2?'eager':'lazy')+'" width="526" height="296" src="'+src+'" alt="'+labels[i]+' — Quick Message Google Play"/><div class="shot-caption">'+labels[i]+'</div></div>').join('');
+ const cards=Array.from(track.children);
+ const dots=document.getElementById('carouselDots');
+ const prev=document.getElementById('carouselPrev');
+ const next=document.getElementById('carouselNext');
+ const pause=document.getElementById('carouselPause');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const isRTL=document.documentElement.dir==='rtl';
+ let active=0,paused=false,lastManual=0,autoDirection=1,hovered=false,focused=false;
+ const visibleCount=()=>window.matchMedia('(max-width: 800px)').matches?1:2;
+ const maxStart=()=>Math.max(0,cards.length-visibleCount());
+ let dotButtons=[];
+ function reposition(){
+  active=Math.min(Math.max(active,0),maxStart());
+  // Offset-based movement does not scroll the surrounding page.
+  const distance=cards[0].offsetLeft-cards[active].offsetLeft;
+  track.style.transform='translate3d('+distance+'px,0,0)';
+  dotButtons.forEach((button,i)=>button.setAttribute('aria-current',i===active?'true':'false'));
+  prev.setAttribute('aria-label',isRTL?'Next screenshot':'Previous screenshot');
+  next.setAttribute('aria-label',isRTL?'Previous screenshot':'Next screenshot');
+ }
+ function goTo(index,manual=true){
+  active=Math.min(Math.max(index,0),maxStart());
+  if(manual){lastManual=Date.now();autoDirection=1}
+  reposition();
+ }
+ function buildDots(){
+  const count=maxStart()+1;
+  dots.replaceChildren();
+  dotButtons=[];
+  for(let i=0;i<count;i++){
+   const b=document.createElement('button');
+   b.type='button';
+   b.setAttribute('aria-label',(lang==='tr'?'Görsel ':'Screenshot ')+(i+1));
+   b.addEventListener('click',()=>goTo(i));
+   dots.appendChild(b);dotButtons.push(b);
+  }
+  reposition();
+ }
+ const advance=delta=>{const max=maxStart();goTo((active+delta+max+1)%(max+1))};
+ prev.addEventListener('click',()=>advance(-1));
+ next.addEventListener('click',()=>advance(1));
+ pause.textContent=data.pause;
+ pause.addEventListener('click',()=>{
+  paused=!paused;lastManual=Date.now();
+  pause.textContent=paused?data.resume:data.pause;
+  pause.setAttribute('aria-pressed',String(paused));
+ });
+ track.addEventListener('keydown',e=>{
+  if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
+  e.preventDefault();
+  if(e.key==='Home')goTo(0);
+  else if(e.key==='End')goTo(maxStart());
+  else advance((e.key==='ArrowRight'?1:-1)*(isRTL?-1:1));
+ });
+ let startX=null;
+ viewport.addEventListener('touchstart',e=>{startX=e.changedTouches[0]?e.changedTouches[0].clientX:null},{passive:true});
+ viewport.addEventListener('touchend',e=>{
+  if(startX===null||!e.changedTouches[0])return;
+  const delta=e.changedTouches[0].clientX-startX;
+  startX=null;
+  if(Math.abs(delta)>45)advance((delta<0?1:-1)*(isRTL?-1:1));
+ },{passive:true});
+ viewport.addEventListener('pointerenter',()=>hovered=true);
+ viewport.addEventListener('pointerleave',()=>hovered=false);
+ track.addEventListener('focusin',()=>focused=true);
+ track.addEventListener('focusout',()=>focused=false);
+ let resizePending=false;
+ window.addEventListener('resize',()=>{
+  if(resizePending)return;
+  resizePending=true;
+  window.requestAnimationFrame(()=>{resizePending=false;buildDots()});
+ },{passive:true});
+ buildDots();
+ if(!reduced.matches){
+  window.setInterval(()=>{
+   if(paused||hovered||focused||document.hidden||Date.now()-lastManual<12000)return;
+   if(active>=maxStart())autoDirection=-1;
+   else if(active===0)autoDirection=1;
+   goTo(active+autoDirection,false);
+  },6500);
+ }
 }
 const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
 window.QuickMessageLocales=langs;window.QuickMessageText=data;
